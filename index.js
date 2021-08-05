@@ -1,6 +1,9 @@
 const express = require('express');
 const config = require('./config.json');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocs = require('./swagger-output.json');
+
 const app = express();
 
 async function initDb()
@@ -25,7 +28,8 @@ async function initDb()
 	await initDb();
 
 	app.use(express.urlencoded({extended: true}));
-	app.use(express.json())
+	app.use(express.json());
+	app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 	app.use('/task', require('./routing/task-route'));
 
 	app.listen(config.server.port, () => {
