@@ -1,0 +1,10 @@
+{
+	"server": {
+		"port": 3000
+	},
+	"db": {
+		"host": "localhost1",
+		"post": "",
+		"name": "todo-api-node"
+	}
+}
