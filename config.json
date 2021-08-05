@@ -3,8 +3,8 @@
 		"port": 3000
 	},
 	"db": {
-		"host": "localhost1",
-		"post": "",
+		"host": "localhost",
+		"port": "",
 		"name": "todo-api-node"
 	}
 }
